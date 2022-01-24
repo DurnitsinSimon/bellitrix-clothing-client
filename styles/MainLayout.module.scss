@@ -1,0 +1,23 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
+
+	.content {
+		flex: 1 1 auto;
+	}
+   
+    .background {
+        position: fixed;
+        z-index: -100;
+        width: 100vw;
+        top: -400px;
+        left: 0;
+        filter: blur(3px);
+    }
+       
+    
+}
+
+ 

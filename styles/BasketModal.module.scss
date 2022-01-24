@@ -1,0 +1,77 @@
+.basketModal {
+	&__clothes {
+		border-top: 0.5px solid rgba(0, 0, 0, 0.301);
+		border-bottom: 0.5px solid rgba(0, 0, 0, 0.301);
+		padding: 30px 0;
+		margin: 0 0 30px 0;
+		position: relative;
+		&Sum {
+			position: absolute;
+			right: 0;
+			bottom: -20px;
+			font-weight: bold;
+		}
+		&Shipping {
+			position: absolute;
+			left: 0;
+			bottom: -20px;
+			font-weight: bold;
+		}
+	}
+	&__clothesItem {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__clothesClose {
+		border: 0.2px solid rgba(0, 0, 0, 0.301);
+		border-radius: 50%;
+		width: 24px;
+		height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 10px;
+		cursor: pointer;
+	}
+	form {
+		button {
+			width: 100%;
+			height: 60px;
+			background-color: #000;
+			color: #fff;
+			font-size: 18px;
+			font-weight: bold;
+			border: none;
+		}
+	}
+    &__formRequired {
+        border: 1px solid red;
+        
+    }
+	&__formItem {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 0 20px 0;
+        span {
+            color: red;
+        }
+		label {
+			font-size: 16px;
+			margin: 0 0 5px 0;
+		}
+		input {
+			height: 56px;
+			font-size: 16px;
+			padding: 0 15px;
+			outline: none;
+		}
+		select {
+			height: 56px;
+			font-size: 16px;
+			padding: 0 15px;
+			outline: none;
+		}
+	}
+}

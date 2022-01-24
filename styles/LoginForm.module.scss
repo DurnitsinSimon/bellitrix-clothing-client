@@ -1,0 +1,13 @@
+.loginForm {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &__body {
+        width: 500px;
+        padding: 20px;
+        border: 1px solid;
+        border-radius: 10px;
+    }
+}

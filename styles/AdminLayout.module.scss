@@ -1,0 +1,42 @@
+.adminLayout {
+	display: flex;
+	position: relative;
+	padding: 0 0 20px 0;
+	&__sidebar {
+		width: 10%;
+        position: absolute;
+    
+	}
+	&__link {
+		width: 100%;
+		text-align: center;
+	}
+	&__cancel {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+
+    &__mainContent {
+        width: 70%;
+        margin: 100px auto 0 auto;
+       
+        border: 5px solid beige;
+        border-radius: 20px;
+        background-color: white;
+        padding: 20px;
+    }
+
+	ul {
+		padding: 0;
+        display: flex;
+		li {
+			padding: 0;
+			width: 100%;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+}
