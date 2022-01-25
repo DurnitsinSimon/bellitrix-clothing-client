@@ -9,6 +9,7 @@ import { Alert } from 'reactstrap';
 interface Props {
 	setNumber: Dispatch<SetStateAction<number>>;
 	setSum: Dispatch<SetStateAction<number>>;
+	setIsShown: Dispatch<SetStateAction<boolean>>;
 	sum: number;
 }
 
@@ -19,7 +20,7 @@ type Inputs = {
 	address: string;
 };
 
-const BasketModal: FC<Props> = ({ setNumber, setSum, sum }) => {
+const BasketModal: FC<Props> = ({ setNumber, setSum, sum, setIsShown }) => {
 	const {
 		register,
 		handleSubmit,
@@ -77,7 +78,7 @@ const BasketModal: FC<Props> = ({ setNumber, setSum, sum }) => {
 	return (
 		<div className={styles.basketModal}>
 			<div className={styles.basketModal__body}>
-				<h2 className={styles.basketModal__title}>Ваш заказ:</h2>
+				<h2 className={styles.basketModal__title}>Ваш заказ: <span onClick={() => setIsShown(false)}>╳</span></h2>
 				<div className={styles.basketModal__clothes}>
 					{products.length === 0 && <h4>Нет добавленных вещей</h4>}
 					{products.map((product, i) => (

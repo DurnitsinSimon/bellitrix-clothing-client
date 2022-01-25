@@ -8,13 +8,24 @@ interface Props {
 	price: number;
 	name: string;
 	currentSize: string;
-	i?: number;
+	i: number;
+	isControled?: boolean;
 	setProducts?: Dispatch<SetStateAction<{ clothe: Clothe; currentSize: string }[]>>;
 	setNumber?: Dispatch<SetStateAction<number>>;
 	setSum?: Dispatch<SetStateAction<number>>;
 }
 
-const BasketModalItem: FC<Props> = ({ currentSize, name, price, src, i, setProducts, setNumber, setSum }) => {
+const BasketModalItem: FC<Props> = ({
+	currentSize,
+	name,
+	price,
+	src,
+	i,
+	setProducts,
+	setNumber,
+	setSum,
+	isControled = true,
+}) => {
 	const deleteProductFromLocalStorage = (index: number) => {
 		const products = localStorage.getItem('products');
 		if (products) {
@@ -36,17 +47,21 @@ const BasketModalItem: FC<Props> = ({ currentSize, name, price, src, i, setProdu
 	};
 	return (
 		<div className={styles.basketModal__clothesItem}>
-			<img src={`${URL}${src}`} alt='' width={70} height={70} />
-			<div className={styles.basketModal__clothesSize}>
-				<h6>{name}</h6>
-				<p>размер: {currentSize}</p>
+			<div className={styles.basketModal__clothesInfo}>
+				<img src={`${URL}${src}`} alt='' width={70} height={70} />
+				<div className={styles.basketModal__clothesSize}>
+					<h6>{name}</h6>
+					<p>размер: {currentSize}</p>
+				</div>
 			</div>
-			<p className={styles.basketModal__clothesPrice}>{price} р.</p>
-			{i ? (
-				<p className={styles.basketModal__clothesClose} onClick={() => deleteProductFromLocalStorage(i)}>
-					╳
-				</p>
-			) : null}
+			<div className={styles.basketModal__clothesControl}>
+				<p className={styles.basketModal__clothesPrice}>{price} р.</p>
+				{isControled ? (
+					<p className={styles.basketModal__clothesClose} onClick={() => deleteProductFromLocalStorage(i)}>
+						╳
+					</p>
+				) : null}
+			</div>
 		</div>
 	);
 };

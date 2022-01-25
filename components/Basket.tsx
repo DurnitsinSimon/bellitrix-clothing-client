@@ -36,8 +36,9 @@ const Basket: FC = () => {
 				<h1 className={styles.basket__number}>{number}</h1>
 			</div>
 			<Modal toggle={() => setIsShown(!isShown)} isOpen={isShown}>
+				
 				<ModalBody>
-					<BasketModal setNumber={setNumber} setSum={setSum} sum={sum}/>
+					<BasketModal setNumber={setNumber} setSum={setSum} sum={sum} setIsShown={setIsShown}/>
 				</ModalBody>
 			</Modal>
 		</div>

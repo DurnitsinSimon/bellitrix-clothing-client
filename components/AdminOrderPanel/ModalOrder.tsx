@@ -23,7 +23,7 @@ const ModalOrder: FC<{ id: string }> = ({ id }) => {
 	return (
 		<div className={styles.modalOrder}>
 			{order?.products.map((product, i) => (
-				<BasketModalItem currentSize={product.currentSize} {...product.clothe} key={i} />
+				<BasketModalItem currentSize={product.currentSize} {...product.clothe} key={i} i={i} isControled={false}/>
 			))}
             <ul>
                 <li>Адрес: <span>{order?.address}</span></li>
