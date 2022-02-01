@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // export const URL = 'http://localhost:5050';
-export const URL = 'http://bellitrix.ru:5050';
+export const URL = 'https://bellitrix.ru:5050';
 
 const $api = axios.create({
 	// withCredentials: true,
