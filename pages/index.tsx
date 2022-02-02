@@ -47,7 +47,7 @@ const Home: NextPage = () => {
 		<MainLayout>
 			<div className='container'>
 				<div className={`${styles.list} ${clothes ? styles.slideTop : ''}`}>
-					{clothes.map((item, index) => (
+					{clothes.reverse().map((item, index) => (
 						<ListItem
 							_id={item._id}
 							key={index}
